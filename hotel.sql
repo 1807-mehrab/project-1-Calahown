@@ -83,5 +83,6 @@ Insert Into Rooms (r_id, roomtype, a_id, roomstate, image) values (202, 'Double'
 Insert Into Rooms (r_id, roomtype, a_id, roomstate, image) values (301, 'Suite', null, 1 , null); 
 Insert Into Rooms (r_id, roomtype, a_id, roomstate, image) values (303, 'Suite', null, 2 , null); 
 Insert Into Issues (reportmessage, r_id, reporter_id, responder_id, status, responsemessage) values ('test', 101, 1, 1, 0, 'test');
+Insert Into Reservations (a_id, r_id, checkin, checkout, approve) values (null,101, (TO_DATE('2018/08/08 21:02:44', 'yyyy/mm/dd hh24:mi:ss')), (TO_DATE('2013/09/09 21:02:44', 'yyyy/mm/dd hh24:mi:ss')), 0);
 
 commit;
