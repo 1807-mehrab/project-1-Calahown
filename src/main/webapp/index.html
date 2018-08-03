@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
+	integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+	crossorigin="anonymous">
+
+<title>David's Hotel</title>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-sm bg-light navbar-light">
+		<!-- Brand/logo -->
+		<!-- Links -->
+		<ul class="navbar-nav">
+			<li class="nav-item"><a class="navbar-brand"> <img
+					class="logo" src="logo.png">
+			</a></li>
+			<p style="color: aliceblue">Login: &nbsp;&nbsp;</p>
+			<form class="navbar-form" id="loginform" action="Login" method="POST">
+				<div class="form-group navbar-right">
+					<div class="input-group">
+						<input type="text" name="username" id="lusername"
+							class="form-control" placeholder="Username"> <input
+							type="password" name="password" id="lpassword"
+							class="form-control" placeholder="Password"> <span
+							class="input-group-btn">
+							<button type="submit" class="btn btn-success">Login</button>
+						</span>
+					</div>
+				</div>
+			</form>
+		</ul>
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+				<button class="btn btn-primary" onclick="CreateAccountForm()">Create
+					New Account</button>
+			</li>
+		</ul>
+	</nav>
+	<div id="body" style="background-color: #f4f4f4">
+	</div>
+	<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+				<img src="ParkHotelTokyo-CitySingle2-Tokyo-1600x1000.jpg" class="img-rounded img-thumbnail">
+				<h3 class="text-center">Single</h3>
+				<p class="text-center">Cozy and Comfortable Room</p>
+				</div>
+				<div class="col-md-4">
+				<img src="City-Twin-Room-1404x1000.jpg" class="img-rounded img-thumbnail">
+				<h3 class="text-center">Double</h3>
+				<p class="text-center">Full of natural light from its picture sized window, a comfortable twin bedded room.</p>
+				</div>
+				<div class="col-md-4">
+				<img src="ParkHotelTokyo-ParkSuite3-Tokyo-1600x1000.jpg" class="img-rounded img-thumbnail">
+				<h3 class="text-center">Suite</h3>
+				<p class="text-center">Suite with a dynamic view of Central Park.</p>
+				</div>
+			</div>
+		</div>
+	<script src="index.js"></script>
+
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
+		integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>

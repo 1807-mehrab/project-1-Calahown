@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	<display-name>Hotel</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>HelloServlet</servlet-name>
+		<servlet-class>com.revature.HelloServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>HelloServlet</servlet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>RegistrationServlet</servlet-name>
+		<servlet-class>com.revature.RegistrationServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegistrationServlet</servlet-name>
+		<url-pattern>/Register</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>com.revature.LoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/Login</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>LogoutServlet</servlet-name>
+		<servlet-class>com.revature.LogoutServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LogoutServlet</servlet-name>
+		<url-pattern>/Logout</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>DashboardServlet</servlet-name>
+		<servlet-class>com.revature.DashboardServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DashboardServlet</servlet-name>
+		<url-pattern>/Dashboard</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>SessionServlet</servlet-name>
+		<servlet-class>com.revature.SessionServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SessionServlet</servlet-name>
+		<url-pattern>/Session</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>RoomsServlet</servlet-name>
+		<servlet-class>com.revature.RoomsServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>RoomsServlet</servlet-name>
+		<url-pattern>/Rooms</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>IssuesServlet</servlet-name>
+		<servlet-class>com.revature.IssuesServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>IssuesServlet</servlet-name>
+		<url-pattern>/Issues</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ProfileServlet</servlet-name>
+		<servlet-class>com.revature.ProfileServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ProfileServlet</servlet-name>
+		<url-pattern>/Profile</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ReservationsServlet</servlet-name>
+		<servlet-class>com.revature.ReservationsServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ReservationsServlet</servlet-name>
+		<url-pattern>/Reservations</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ReservationApprovalServlet</servlet-name>
+		<servlet-class>com.revature.ReservationApprovalServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ReservationApprovalServlet</servlet-name>
+		<url-pattern>/ReservationApproval</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>GuestServlet</servlet-name>
+		<servlet-class>com.revature.GuestServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>GuestServlet</servlet-name>
+		<url-pattern>/Guests</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>RoomImageServlet</servlet-name>
+		<servlet-class>com.revature.RoomImageServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>RoomImageServlet</servlet-name>
+		<url-pattern>/RoomImage</url-pattern>
+	</servlet-mapping>
+</web-app>
