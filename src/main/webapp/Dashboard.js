@@ -30,7 +30,7 @@ function Rooms() {
 				} 
                 if (jsondata){
 					var str = `<table class="table table-striped table-bordered"><tr><th>Room #</th><th>Room Type</th><th>Occupant</th><th>Status</th><th>Image</th></tr>`;
-					jsondata.forEach(function (element) {str += `<tr><td>${element.r_id}</td><td>${element.roomtype}</td><td>${element.a_id}</td><td>${element.roomstate}</td><td><img style="max-height : 200px; max-width : 200px" class="img-responsive img-thumbnail" src="${element.imageurl}"></td></tr>`});
+					jsondata.forEach(function (element) { if (element.roomstate == 1) { element.roomstate = "Available";} else {element.roomstate = "Occupied";} str += `<tr><td>${element.r_id}</td><td>${element.roomtype}</td><td>${element.a_id}</td><td>${element.roomstate}</td><td><img style="max-height : 200px; max-width : 200px" class="img-responsive img-thumbnail" src="${element.imageurl}"></td></tr>`});
 					str += `</table>`;
 					document.getElementById("body").innerHTML = str;
 				}
