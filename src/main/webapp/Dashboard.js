@@ -6,7 +6,6 @@ function getSessionAttribute() {
             if(this.status == 200) {
                 let data= xhr.responseText;
                 user = JSON.parse(data);
-                console.log(user);
                 if (user.is_host == 1) {
                 	document.getElementById("navbar").innerHTML += `<a class="nav-item nav-link" onclick=Guests()>Guests</a>`
                 }
@@ -30,7 +29,6 @@ function Rooms() {
 					jsondata = JSON.parse(data);
 				} 
                 if (jsondata){
-					jsondata.forEach(function (element) { console.log(element) })
 					var str = `<table class="table table-striped table-bordered"><tr><th>Room #</th><th>Room Type</th><th>Occupant</th><th>Status</th><th>Image</th></tr>`;
 					jsondata.forEach(function (element) {str += `<tr><td>${element.r_id}</td><td>${element.roomtype}</td><td>${element.a_id}</td><td>${element.roomstate}</td><td><img class="img-responsive" src="${element.imageurl}"></td></tr>`});
 					str += `</table>`;
@@ -57,7 +55,6 @@ function Reservations() {
 					jsondata = JSON.parse(data);
 				}
 				if (jsondata) {
-					jsondata.forEach(function (element) { console.log(element) })
 	                var str = `<table class="table table-striped table-bordered"><tr><th>Reservation #</th><th>Room #</th><th>Checkin</th><th>Checkout</th><th>Status</th></tr>`;
 	                jsondata.forEach(function (element) {if (element.approve == 2) {element.approve = `Approved`;} else if (element.approve== 1) {element.approve = `Denied`;} else {element.approve = `Pending`;}  str += `<tr><td>${element.resv_id}</td><td>${element.r_id}</td><td>${new Date(element.checkin).toString()}</td><td>${new Date(element.checkout).toString()}</td><td>${element.approve}</td></tr>`});
 	                str += `</table>`;
@@ -82,12 +79,10 @@ function Issues () {
 		if (this.readyState == 4) {
 			if (this.status == 200) {
 				let data = xhr.responseText;
-				console.log(data);
 				if (data) {
 					jsondata = JSON.parse(data);
 				}
 				if (jsondata.length > 0) {
-					jsondata.forEach(function (element) { console.log(element) })
 	                var str = `<table class="table table-striped table-bordered"><tr><th>Issue #</th><th>Room #</th><th>Report Message</th><th>Reply</th></tr>`;
 	                jsondata.forEach(function (element) {str += `<tr><td>${element.i_id}</td><td>${element.r_id}</td><td>${element.reportMessage}</td><td>${element.responderMessage}</td></tr>`});
 	                str += `</table>`;
@@ -109,22 +104,18 @@ function Guests() {
 	let xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = function () {
 		if (this.readyState == 4) {
-			console.log(this.readystate);
 			if (this.status == 200) {
-				console.log(this.status);
 				let data = xhr.responseText;
-				console.log(data);
 				if (data) {
 					jsondata = JSON.parse(data);
-					console.log(jsondata)
 				}
 				if (jsondata.length > 0) {
-					jsondata.forEach(function (element) { console.log(element) })
-	                var str = `<table class="table table-striped table-bordered"><tr><th>User id</th><th>Email</th><th>Username</th><th>Pass</th></tr>`;
+					var str = `<table class="table table-striped table-bordered"><tr><th>User id</th><th>Email</th><th>Username</th><th>Pass</th></tr>`;
 	                jsondata.forEach(function (element) {str += `<tr><td>${element.id}</td><td>${element.email}</td><td>${element.username}</td><td>${element.password}</td></tr>`});
 	                str += `</table>`;
 	                document.getElementById("body").innerHTML = str;
 				}
+				//GuestRegistration();
 			}
 		}
 	}
@@ -308,7 +299,6 @@ function RoomImage64() {
         var fileReader = new FileReader();
         fileReader.onload = function(fileLoadedEvent) {
             var base64value = fileLoadedEvent.target.result;
-            console.log(base64value);
             let xhr = new XMLHttpRequest();
             let room = document.forms['roomimageform']['roomimage'].value;
             let jsondata = { "room" : room , "image": base64value };
@@ -317,4 +307,32 @@ function RoomImage64() {
         };
         fileReader.readAsDataURL(fileToLoad);
     }
+}
+
+function GuestRegistration() {
+	document.getElementById("body").innerHTML += `
+	    <div class="container"><h2>Sign up sheet</h2>
+	    <form action="HostRegistration" method="POST" id="caform">
+	        <div class= "form-group" >
+	        <label for="email">Email:</label>
+	        <div class="col-4">
+	            <input type="text" class="form-control" id="email" name="email" placeholder="Enter email" width="200px" required>
+	                <br>
+	            </div>
+	            </div>
+	            <div class="form-group">
+	                <label for="username">Username:</label><div class="col-4">
+	                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" required>
+	                        <br>
+	            </div>
+	            </div>
+	                    <div class="form-group">
+	                        <label for="name">Password:</label><div class="col-4">
+	                            <input type="text" class="form-control" id="password" name="password" placeholder="Enter name" required>
+	                                <br>
+	            </div>
+	            <button type="submit" class="btn btn-primary">Submit</button>
+	            </div>           
+	        </form>
+	        </div>`;
 }

@@ -5,19 +5,19 @@ function CreateAccountForm() {
         <div class= "form-group" >
         <label for="email">Email:</label>
         <div class="col-4">
-            <input type="text" class="form-control" id="email" placeholder="Enter email" width="200px" required>
+            <input type="text" class="form-control" id="email" name="email" placeholder="Enter email" width="200px" required>
                 <br>
             </div>
             </div>
             <div class="form-group">
                 <label for="username">Username:</label><div class="col-4">
-                    <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" required>
                         <br>
             </div>
             </div>
                     <div class="form-group">
                         <label for="name">Password:</label><div class="col-4">
-                            <input type="text" class="form-control" id="password" placeholder="Enter name" required>
+                            <input type="text" class="form-control" id="password" name="password" placeholder="Enter name" required>
                                 <br>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
